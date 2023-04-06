@@ -1,31 +1,58 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-export const AppointmentsPage = () => {
-  /*
-  Define state variables for 
-  appointment info
-  */
+import { TileList } from "../../components/tileList/TileList";
+
+export const AppointmentsPage = (props) => {
+  const [title, setTitle] = useState('');
+  const [contact, setContact] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [alert, setAlert] = useState('');
+  const defaultListValue = 'Please select a contact';
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data  
-    */
-   
+    
+    props.onAddAppointment(title, contact, date, time);
+    setTitle('');
+    setContact('');
+    setDate('');
+    setTime('');
+    document.getElementById('contactList').value = defaultListValue;
   };
+
+  useEffect(() => {
+    for(const appointmentItem of props.appointments) {
+      if(appointmentItem.date === date && appointmentItem.time === time) {
+        setAlert('This date and time is already booked');
+      } else {
+        setAlert('');
+      }
+    }
+  }, [props.appointments, date, time]);
 
   return (
     <div>
       <section className="appointment">
         <h2>Add Appointment</h2>
-        <input type="text" placeholder="Title"/>
-        <input type="text" placeholder="Contact"/>
-        <input type="datetime-local" placeholder="Date"/>
-        <input type="submit"/>
+        <AppointmentForm 
+          title={title}
+          setTitle={setTitle}
+          contacts={props.contacts}
+          setContact={setContact}
+          date={date}
+          setDate={setDate}
+          time={time}
+          setTime={setTime}
+          handleSubmit={handleSubmit}
+          alert={alert}
+          defaultListValue={defaultListValue}
+        />
       </section>
       <hr />
       <section>
         <h2>Appointments</h2>
+        <TileList object={props.appointments}/>
       </section>
     </div>
   );
