@@ -16,8 +16,12 @@ export const AppointmentsPage = () => {
 
   return (
     <div>
-      <section>
+      <section className="appointment">
         <h2>Add Appointment</h2>
+        <input type="text" placeholder="Title"/>
+        <input type="text" placeholder="Contact"/>
+        <input type="datetime-local" placeholder="Date"/>
+        <input type="submit"/>
       </section>
       <hr />
       <section>

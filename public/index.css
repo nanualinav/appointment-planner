@@ -1,70 +1,95 @@
-#root {
-  padding: 30px;
+* {
+  color: #454545;
   font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-image: url("./images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} 
+#root {
+  padding: 30px 60px;
 }
 
 nav > a {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  color: #000000;
-  margin-right: 30.5px;
+  font-size: 20px;
+  margin-right: 50.5px;
   text-decoration-line: none;
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid #454545;
+  font-weight: 550;
 }
 
 nav > a.active {
-  text-decoration-line: underline;
+  background-color: white
 }
 
 nav {
   padding-bottom: 20px;
-  border-bottom: 1px solid #979797;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 18px;
-  color: #000000;
   margin: 0;
   margin-bottom: 18px;
 }
 
 section {
+  background-color: rgba(233, 233, 233, .9);
+  height: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  width: 65%;
+  display: inline-block;
 }
 
 hr {
   border: none;
-  border-top: 1px solid #979797;
+  border-top: 1px solid #477d15;
   margin: 20px 0;
+  width: 67%;
 }
 
 input[type="submit"] {
-  background: #03a8d8;
+  
   border-radius: 4px;
-  color: #ffffff;
   font-weight: bold;
   font-size: 14px;
   border: none;
   outline: none;
   padding: 10px 0;
-  width: 100%;
-  font-family: "Open Sans", sans-serif;
+  width: 52%;
+  height: 50px;
   margin-top: 10px;
   margin-bottom: 0px;
 }
 
+.contact input[type="submit"] {
+  background-color: #C5E6FF;
+  
+}
+
+.appointment input[type="submit"] {
+  background-color: #FFF4C4;
+}
+
 input,
 select {
-  font-family: "Open Sans", sans-serif;
   background: #ffffff;
   border: 1px solid #979797;
   border-radius: 4px;
   padding: 7px 9.5px 9px 9.5px;
   outline: none;
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
-  box-sizing: border-box;
 }
 
 .tile {
