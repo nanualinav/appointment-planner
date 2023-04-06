@@ -93,15 +93,20 @@ select {
 }
 
 .tile {
-  margin: 0;
   font-size: 14px;
-  margin-bottom: 4px;
+  line-height: .5;
 }
 
-.tile.tile-title {
+.tile-title {
   font-weight: bold;
 }
 
 .tile-container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  border: 2px solid #C5E6FF;
+  padding: 0 10px;
+}
+
+.alert {
+  color: red;
 }
