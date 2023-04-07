@@ -4,7 +4,7 @@ import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = (props) => {
-  const [isDuplicate, setIsDuplicate] = useState(false);
+  const [isDuplicate] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
