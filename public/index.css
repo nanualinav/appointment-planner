@@ -92,6 +92,10 @@ select {
   margin-bottom: 10px;
 }
 
+select {
+  width: 52%;
+}
+
 .tile {
   font-size: 14px;
   line-height: .5;
@@ -110,3 +114,4 @@ select {
 .alert {
   color: red;
 }
+

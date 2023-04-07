@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 import { TileList } from "../../components/tileList/TileList";
+import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 
 export const AppointmentsPage = (props) => {
   const [title, setTitle] = useState('');
@@ -8,7 +9,7 @@ export const AppointmentsPage = (props) => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [alert, setAlert] = useState('');
-  const defaultListValue = 'Please select a contact';
+  const defaultListValue = 'No contact selected';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ export const AppointmentsPage = (props) => {
     setContact('');
     setDate('');
     setTime('');
-    document.getElementById('contactList').value = defaultListValue;
+    document.getElementById('contact-list').value = defaultListValue;
   };
 
   useEffect(() => {
@@ -46,8 +47,7 @@ export const AppointmentsPage = (props) => {
           setTime={setTime}
           handleSubmit={handleSubmit}
           alert={alert}
-          defaultListValue={defaultListValue}
-        />
+          defaultListValue={defaultListValue} />
       </section>
       <hr />
       <section>

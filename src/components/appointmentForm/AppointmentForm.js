@@ -13,7 +13,8 @@ export const AppointmentForm = ({
   time,
   setTime,
   handleSubmit,
-  defaultListValue
+  defaultListValue,
+  alert
 }) => {
   const getTodayString = () => {
     const [month, day, year] = new Date()
@@ -21,6 +22,8 @@ export const AppointmentForm = ({
       .split("/");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
+
+  const today = getTodayString();
 
   return (
     <form onSubmit={handleSubmit}>
@@ -43,7 +46,7 @@ export const AppointmentForm = ({
         placeholder="Date"
         onChange={(e) => setDate(e.target.value)}
         id="date-input"
-        min={getTodayString()}
+        min={today}
         required
       />
       <input 
